@@ -25,7 +25,7 @@ $config = new Config()
 
 new PhpCsFixerCodingStandard()->applyTo($config, [
     'yoda_style' => true,
-    'Kenny1911/class_visibility' => true,
+    //'Kenny1911/class_visibility' => true, // PHPStan does not support @psalm-internal annotation
     'numeric_literal_separator' => false,
     'php_unit_data_provider_name' => [
         'prefix' => 'data',
