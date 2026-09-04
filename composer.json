@@ -16,11 +16,14 @@
         "cs-fix": "./tools/php-cs-fixer/vendor/bin/php-cs-fixer fix",
         "cs-check": "./tools/php-cs-fixer/vendor/bin/php-cs-fixer check",
         "phpunit": "phpunit",
-        "psalm":"./tools/psalm/vendor/bin/psalm",
+        "phpstan": [
+            "./tools/phpstan/vendor/bin/phpstan clear-result-cache",
+            "./tools/phpstan/vendor/bin/phpstan analyse --memory-limit=1G"
+        ],
         "checks": [
             "@cs-check",
             "@phpunit",
-            "@psalm -- --no-cache"
+            "@phpstan"
         ]
     },
     "autoload": {
